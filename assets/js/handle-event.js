@@ -34,7 +34,7 @@ const handleRenderPhaseNumber = (phaseNumber) => {
 
 const handleRemoveRow = (table, rowNumber, phaseTableRows) => {
     for (let i = 0; i < rowNumber; i++) {
-        table.removeChild(phaseTableRows[i])
+        table.removeChild(phaseTableRows[phaseTableRows.length - 1 - i])
     }
 }
 
@@ -190,7 +190,6 @@ export const handleStartCalculate = (event) => {
     const phaseTableRows = document.querySelectorAll('#middle table .phase-number-row')
     const hasEmpty = checkAllColumnIsEmpty(phaseTableRows)
     handleCheckEmptyColumn(phaseTableRows)
-    console.log(hasEmpty)
     if (!hasEmpty) {
         if (phaseTableRows.length !== 0) {
             const phaseDefects = document.querySelectorAll('#middle table .phase-defect')
