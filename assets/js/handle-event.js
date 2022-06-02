@@ -15,10 +15,12 @@ const handleRenderPhaseNumber = (phaseNumber) => {
             if (j !== 0) {
                 if (j === 1) {
                     input.setAttribute('type', 'number')
+                    input.setAttribute('min', "0")
                     input.setAttribute('class', 'phase-defect')
                 }
                 if (j === 2) {
                     input.setAttribute('type', 'number')
+                    input.setAttribute('min', "1")
                     input.setAttribute('class', 'number-defect-total')
                 }
             } else {
@@ -53,11 +55,16 @@ export const handleNewPhase = (event) => {
     refreshPhaseNumberTable()
 }
 
-export const handleChangePhaseNumber = (event) => {
-    if (event.target.value < 0) {
-        alert("Phase number is not small than 0")
-        event.target.value = 0
+export const handleKeepGreaterThan = (current, value) => {
+    if (Number(current.value) < value) {
+        alert(`This must be greater than or equal to ${value}`)
+        current.value = value
+        current.focus()
     }
+}
+
+export const handleChangePhaseNumber = (event) => {
+    handleKeepGreaterThan(event.target, 0)
     phaseNumber = Number(phaseNumberInput.value)
 }
 
