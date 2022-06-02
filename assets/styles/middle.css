@@ -1,0 +1,49 @@
+#middle {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+#middle table, #middle table tr th, #middle table tr td {
+    /*border: 1px solid #fff;*/
+}
+
+#middle table tr th p {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+#middle .phase-number-question {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+}
+
+#middle .phase-number-question p {
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#middle .phase-number-question input {
+    width: 30px;
+}
+
+#middle .calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#middle .calculator button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#middle table tr td input.empty {
+    border-color: #ff0000;
+}

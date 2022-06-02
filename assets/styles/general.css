@@ -1,0 +1,16 @@
+.border-bottom {
+    border-bottom: 2px solid #fff;
+}
+
+.border-radius-button {
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+table caption {
+    padding: 10px;
+    background-color: #fff;
+}

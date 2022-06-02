@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/top.css">
+    <link rel="stylesheet" href="styles/middle.css">
+    <link rel="stylesheet" href="styles/bottom.css">
+    <title>DRE Calculator</title>
+    <style>
+        body {
+            background-color: #34ebae;
+            background-image: url("./imgs/falling-star-amp-clouds.jpeg")
+        }
+
+        .box {
+            background-color: #fff;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <section id="top" class="border-bottom box">
+        <h1>Defect Removal Effectiveness Calculator</h1>
+    </section>
+    <section id="middle" class="border-bottom">
+        <div class="box"
+             style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; flex-direction: column; padding-top: 10px">
+            <p style="margin-bottom: 10px; font-size: 20px; font-weight: bold">DRE formula</p>
+            <img src="./imgs/img.png" alt="DRE formula">
+        </div>
+        <div class="phase-number-question">
+            <label style="display: flex; align-item: center">
+                <p>How many phase?</p>
+                <input type="number">
+            </label>
+            <button class="submit border-radius-button" style="padding: 5px 10px">Submit</button>
+            <button class="clear border-radius-button" style="padding: 5px 10px">Clear</button>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center">
+            <table class="box">
+                <tr>
+                    <th><p>Phase Name</p></th>
+                    <th><p>Defects Corrected for Phase</p></th>
+                    <th><p>Total Defects (Corrected and Not Corrected) for Phase</p></th>
+                </tr>
+            </table>
+        </div>
+        <div class="calculator">
+            <button class="border-radius-button">Calculator</button>
+        </div>
+    </section>
+    <section id="bottom" class="border-bottom">
+        <div class="result">
+            <button style="padding: 10px 20px; margin-bottom: 20px" class="border-radius-button">Clear</button>
+            <table class="result-by-phase box">
+                <caption class="box">Defect Removal Effectiveness by Phase</caption>
+                <tr>
+                    <th><p>Phase Name</p></th>
+                    <th><p>Corrected</p></th>
+                    <th><p>Defects</p></th>
+                    <th><p>DRE</p></th>
+                </tr>
+            </table>
+            <table class="result-total box">
+                <caption class="box">Defect Removal Effectiveness - Total Project</caption>
+                <tr>
+                    <th><p>Corrected</p></th>
+                    <th><p>Defects</p></th>
+                    <th><p>DRE</p></th>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer style="margin-bottom: 20px">
+        <div class="box"
+             style="border-top: 2px dashed #000; width: 50%; text-align: center; margin: 50px auto 0; padding: 20px">
+            <span class="time"></span>
+            <p style="font-size: 10px; font-weight: lighter; padding: 10px">Developed by: LeVietAnh</p>
+        </div>
+    </footer>
+</div>
+
+<script type="module" src="js/index.js"></script>
+</body>
+</html>

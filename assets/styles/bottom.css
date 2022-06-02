@@ -1,0 +1,31 @@
+#bottom {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+#bottom .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottom .result table {
+    margin-bottom: 50px;
+}
+
+#bottom .result table caption {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#bottom table, #bottom table tr th, #bottom table tr td {
+    /*border: 1px solid #fff;*/
+}
+
+#bottom table tr th p {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
