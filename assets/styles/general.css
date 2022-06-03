@@ -10,6 +10,14 @@ button:hover {
     cursor: pointer;
 }
 
+button {
+    transition: transform 0.25s linear;
+}
+
+button.scale:hover {
+    transform: scale(1.2)
+}
+
 table caption {
     padding: 10px;
     background-color: #fff;

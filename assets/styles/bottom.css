@@ -29,3 +29,7 @@
     font-weight: bold;
 }
 
+#bottom .export-file {
+    padding: 10px 20px;
+    background-color: aquamarine;
+}
