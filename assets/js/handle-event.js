@@ -1,5 +1,6 @@
 import {phaseNumberInput, phaseTable, resultByPhaseTable, resultTotalTable} from './constants.js'
-import {refreshPhaseNumberTable} from "./index.js";
+import {exportPermission, refreshPhaseNumberTable} from "./index.js";
+import CSV from './CSV.js'
 
 let phaseNumber = 0
 
@@ -85,7 +86,7 @@ const handleDRECalculate = (defect, total) => {
     let defectAfterCalculate = 0
     let defectTotalAfterCalculate = 0
     if (defect.length === total.length) {
-        if (defect.length > 1 && total.length > 1) {
+        if (defect.length >= 1 && total.length >= 1) {
             const loopTimes = defect.length
             for (let i = 0; i < loopTimes; i++) {
                 if (defect[i].value === '' || total[i].value === '') continue
@@ -212,6 +213,7 @@ export const handleStartCalculate = (event) => {
                 handleRemoveRow(resultTotalTable, 1, resultTotalRows)
             }
             handleRenderDRE(dre, resultTotalTable)
+            exportPermission()
         } else {
             alert('Your project has no phases')
         }
@@ -252,4 +254,10 @@ export const handleInputCorrectedChange = (currColumn, prevColumn, nextColumn) =
             currColumn.focus()
         }
     }
+}
+
+export const handleClickExport = (event) => {
+    event.preventDefault()
+    const csv = new CSV(...document.querySelectorAll('table.table'))
+    csv.exportFile()
 }

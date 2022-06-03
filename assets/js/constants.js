@@ -7,3 +7,4 @@ export const resultByPhaseTable = document.querySelector('#bottom .result .resul
 export const resultTotalTable = document.querySelector('#bottom .result .result-total')
 export const time = document.querySelector('footer .time')
 export const resultClearButton = document.querySelector('#bottom .result button')
+export const exportFileButton = document.querySelector('#bottom .export-file')

@@ -6,7 +6,8 @@ import {
     handleClearResult,
     handleInputTotalChange,
     handleInputCorrectedChange,
-    handleKeepGreaterThan
+    handleKeepGreaterThan,
+    handleClickExport
 } from './handle-event.js'
 import {
     phaseNumberInput,
@@ -14,7 +15,8 @@ import {
     phaseNumberClearButton,
     calculateButton,
     time,
-    resultClearButton
+    resultClearButton,
+    exportFileButton
 } from './constants.js'
 
 (() => {
@@ -30,7 +32,7 @@ import {
     }, 1000)
 })()
 
-const refreshPhaseNumberTable = () => {
+export const refreshPhaseNumberTable = () => {
     const phaseNumberRows = document.querySelectorAll('#middle table .phase-number-row')
     if (phaseNumberRows) {
         phaseNumberRows.forEach(row => {
@@ -49,4 +51,6 @@ const refreshPhaseNumberTable = () => {
     }
 }
 
-export {refreshPhaseNumberTable}
+export const exportPermission = () => {
+    exportFileButton.addEventListener('click', handleClickExport)
+}
