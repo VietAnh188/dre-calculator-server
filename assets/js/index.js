@@ -7,7 +7,8 @@ import {
     handleInputTotalChange,
     handleInputCorrectedChange,
     handleKeepGreaterThan,
-    handleClickExport
+    handleClickExport,
+    isExistingValueIn
 } from './handle-event.js'
 import {
     phaseNumberInput,
@@ -39,6 +40,10 @@ export const refreshPhaseNumberTable = () => {
             const columnName = row.children[0]
             const columnCorrected = row.children[1]
             const columnTotal = row.children[2]
+            columnName.children[0].addEventListener('change', (event) => {
+                const columnNameInputs = document.querySelectorAll('#middle table .phase-number-cell .phase-name')
+                isExistingValueIn(columnNameInputs, event.target)
+            })
             columnCorrected.children[0].addEventListener('change', (event) => {
                 handleKeepGreaterThan(event.target, 0)
                 handleInputCorrectedChange(event.target, columnName.children[0], columnTotal.children[0])

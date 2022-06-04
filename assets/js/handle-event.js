@@ -261,3 +261,15 @@ export const handleClickExport = (event) => {
     const csv = new CSV(...document.querySelectorAll('table.table'))
     csv.exportFile()
 }
+
+export const isExistingValueIn = (columns, target) => {
+    const columnInputWithoutTargets = [...columns].filter(input => input !== target)
+    columnInputWithoutTargets.filter(input => input.value !== '').forEach(input => {
+        if (input.value === target.value) {
+            alert("This name is already existing")
+            target.value = ''
+            target.focus()
+            return
+        }
+    })
+}
