@@ -41,6 +41,11 @@ export const refreshPhaseNumberTable = () => {
             const columnCorrected = row.children[1]
             const columnTotal = row.children[2]
             columnName.children[0].addEventListener('change', (event) => {
+                if (event.target.value.trim() === '') {
+                    alert("The name cannot be a space")
+                    event.target.value = ''
+                    event.target.focus()
+                }
                 const columnNameInputs = document.querySelectorAll('#middle table .phase-number-cell .phase-name')
                 isExistingValueIn(columnNameInputs, event.target)
             })
